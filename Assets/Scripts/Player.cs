@@ -44,4 +44,13 @@ public class Player : MonoBehaviour
         }
 
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            enemyScript.enemyHealth -= 5;
+            print(enemyScript.enemyHealth);
+        }
+    }
 }
